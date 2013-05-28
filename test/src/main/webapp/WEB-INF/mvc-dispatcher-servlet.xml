@@ -12,4 +12,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.nuodb.jdbc.Driver" />
+        <property name="url" value="jdbc:com.nuodb://localhost/" />
+        <property name="username" value="justin" />
+        <property name="password" value="test" />
+    </bean>
 </beans>

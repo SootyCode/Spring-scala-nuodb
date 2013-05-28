@@ -1,10 +1,12 @@
 package com.test.Hello
 
-import org.springframework.web.bind.annotation.{RequestMethod, RequestMapping}
+import org.springframework.web.bind.annotation.{RequestMapping, RequestMethod}
 import org.springframework.stereotype.Controller
 import java.lang.String
 import org.springframework.ui.ModelMap
 import org.slf4j.LoggerFactory
+import org.nascency.model.User
+import org.springframework.beans.factory.annotation.Autowired
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,9 +19,11 @@ import org.slf4j.LoggerFactory
 @RequestMapping(Array("/hello"))
 class Home {
   private val logger = LoggerFactory.getLogger(this.getClass)
+
   @RequestMapping(method = Array(RequestMethod.GET)) def printWelcome(model: ModelMap): String = {
     model.addAttribute("message", "Hello world!")
     logger.info("hello")
-    return "hello"
+    val x = new User("justin", "holmes", "jholmes", "test", "justin@nascency.co.uk", 1, true)
+    "hello"
   }
 }
